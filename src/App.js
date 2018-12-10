@@ -1,46 +1,52 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { clickButton } from './actions';
+
+import './App.css';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      toggle: true,
-      list: ['a', 'b', 'c'],
-    };
+  
+  state = {
+    inputValue: ''
   }
 
-  onToggleList = () => {
-    this.setState(prevState => ({ toggle: !prevState.toggle }));
-  };
-
+  inputChange = event => {
+    this.setState({
+      inputValue: event.target.value
+    })
+  }
+  
   render() {
+    
+    const {
+      clickButton,
+      newValue
+    } = this.props;
+
+    const { inputValue } = this.state;
+    
     return (
-      <div>
-        <Toggle
-          toggle={this.state.toggle}
-          onToggleList={this.onToggleList}
-        />
-        {this.state.toggle && <List list={this.state.list} />}
+      <div className="App" style={{ paddingTop: '10px' }}>
+        <input
+          value={inputValue} 
+          onChange={this.inputChange}
+          type='text' />
+
+        <button onClick={() => clickButton(inputValue)}>
+          Click me!
+        </button>
+        <h1>{newValue}</h1>
       </div>
     );
   }
 }
 
-const Toggle = ({ toggle, onToggleList }) => (
-  <button type="button" onClick={onToggleList}>
-    {toggle ? 'Hide' : 'Show'}
-  </button>
-);
+const mapStateToProps = store => ({
+  newValue: store.clickState.newValue
+});
 
-const List = ({ list }) => (
-  <ul>
-    {list.map((item) => (
-      <Item key={item} item={item} />
-    ))}
-  </ul>
-);
+const mapDispatchToProps = dispatch =>
+  bindActionCreators({ clickButton }, dispatch);
 
-const Item = ({ item }) => <li>{item}</li>;
-
-export default App;
+  export default connect(mapStateToProps, mapDispatchToProps)(App);
