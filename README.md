@@ -1,3 +1,8 @@
+
+## Tuto redux
+[Tuto redux](https://medium.com/reactbrasil/iniciando-com-redux-c14ca7b7dcf)
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
