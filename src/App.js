@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { clickButton } from './actions';
+import { addAction } from './actions';
 
 import './App.css';
 
@@ -20,7 +20,7 @@ class App extends Component {
   render() {
     
     const {
-      clickButton,
+      addAction,
       list
     } = this.props;
 
@@ -33,7 +33,7 @@ class App extends Component {
           onChange={this.inputChange}
           type='text' />
 
-        <button onClick={() => clickButton(inputValue)}>
+        <button onClick={() => addAction(inputValue)}>
           Click me!
         </button>
         <ul>
@@ -50,6 +50,6 @@ const mapStateToProps = store => ({
   list: store.clickState.list
 });
 
-const mapDispatchToProps = dispatch => bindActionCreators({ clickButton }, dispatch);
+const mapDispatchToProps = dispatch => bindActionCreators({ addAction }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

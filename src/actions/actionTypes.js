@@ -1,1 +1,2 @@
-export const CLICK_UPDATE_VALUE = 'CLICK_UPDATE_VALUE';
+export const CLICK_UPDATE_VALUE =   'CLICK_UPDATE_VALUE';
+export const CLICK_ADD_VALUE =      'CLICK_ADD_VALUE';
