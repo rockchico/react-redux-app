@@ -9,8 +9,7 @@ export const addAction = value => ({
 });
 
 
-export const clickButton = value => ({
+export const updateAction = value => ({
     type: CLICK_UPDATE_VALUE,
-    id: nextTodoId++,
-    newValue: value
+    id: value.id,
 });
