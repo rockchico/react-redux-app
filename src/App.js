@@ -21,7 +21,7 @@ class App extends Component {
     
     const {
       clickButton,
-      newValue
+      list
     } = this.props;
 
     const { inputValue } = this.state;
@@ -36,14 +36,18 @@ class App extends Component {
         <button onClick={() => clickButton(inputValue)}>
           Click me!
         </button>
-        <h1>{newValue}</h1>
+        <ul>
+        {list.map(value => (
+          <li>{value}</li>
+        ))}
+        </ul>
       </div>
     );
   }
 }
 
 const mapStateToProps = store => ({
-  newValue: store.clickState.newValue
+  list: store.clickState.list
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({ clickButton }, dispatch);

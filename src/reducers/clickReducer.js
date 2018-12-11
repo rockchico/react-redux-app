@@ -1,7 +1,7 @@
 import { CLICK_UPDATE_VALUE } from '../actions/actionTypes';
 
 const initialState = {
-    newValue: 'Teste inicial'
+    list: ["opa", "epa", "bla"]
 };
 
 export const clickReducer = (state = initialState, action) => {
@@ -9,7 +9,7 @@ export const clickReducer = (state = initialState, action) => {
         case CLICK_UPDATE_VALUE:
         return {
             ...state,
-            newValue: action.newValue
+            list: state.list.concat(action.newValue)
         };
         default:
         return state;
