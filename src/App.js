@@ -38,7 +38,7 @@ class App extends Component {
         </button>
         <ul>
         {list.map(value => (
-          <li>{value}</li>
+          <li>{value.text}</li>
         ))}
         </ul>
       </div>
