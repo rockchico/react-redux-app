@@ -16,10 +16,13 @@ export const clickReducer = (state = initialState, action) => {
             list: state.list.concat({id: action.id, text: action.newValue})
         };
         case CLICK_UPDATE_VALUE:
-        return state.map(
-            todo =>
-            todo.id === action.id ? { ...todo, enabled: !todo.enabled } : todo
-        )
+        return {
+            ...state,
+            list: state.list.map(
+                todo =>
+                todo.id === action.id ? { ...todo, enabled: !todo.enabled } : todo
+            )
+        };
         default:
         return state;
     }
