@@ -3,8 +3,8 @@ import { CLICK_ADD_VALUE } from '../actions/actionTypes';
 
 const initialState = {
     list: [
-        //{id: 1, text: "opa", enabled: true},
-        //{id: 2, text: "epa", enabled: true},
+        {id: 1, text: "opa", enabled: true},
+        {id: 2, text: "epa", enabled: true},
     ]
 };
 

@@ -39,7 +39,7 @@ class App extends Component {
         </button>
         <ul>
         {list.map(value => (
-          <li onClick={() => updateAction(value)} style={{ textDecoration: value.enabled ? 'line-through' : 'none' }} >
+          <li key={value.id} onClick={() => updateAction(value)} style={{ textDecoration: value.enabled ? 'line-through' : 'none' }} >
             {value.text}
           </li>
         ))}
