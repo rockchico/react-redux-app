@@ -2,6 +2,14 @@
 ## Tuto redux
 [Tuto redux 1](https://medium.com/reactbrasil/iniciando-com-redux-c14ca7b7dcf)
 [Tuto redux 2](https://www.valentinog.com/blog/react-redux-tutorial-beginners/)
+[Tuto redux saga 1](https://redux-saga.js.org/docs/introduction/BeginnerTutorial.html)
+
+https://flaviocopes.com/redux-saga/
+https://flaviocopes.com/es6/
+
+
+https://jsonplaceholder.typicode.com/posts
+
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
