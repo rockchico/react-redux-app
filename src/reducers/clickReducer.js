@@ -15,6 +15,11 @@ export const clickReducer = (state = initialState, action) => {
             ...state,
             list: state.list.concat({id: action.id, text: action.newValue})
         };
+        case 'FOUND_BAD_WORD':
+        return {
+            ...state,
+            list: state.list.concat({id: action.id, text: 'BAD WORD DETECTED'})
+        };
         case CLICK_UPDATE_VALUE:
         return {
             ...state,
